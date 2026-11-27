@@ -256,12 +256,16 @@
     .privacy-links a,.privacy-links button{font:inherit;font-size:10px;color:#aaa;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
     @media(max-width:640px){.privacy-notice{left:0;right:0;bottom:0;width:100%;display:block;padding:18px 18px calc(18px + env(safe-area-inset-bottom))}.privacy-actions{margin-top:14px;justify-content:space-between}.privacy-notice p{font-size:11px}.privacy-dismiss{padding:11px 14px}}
 
+
+    /* Cabeçalho em largura total da viewport */
+    .nav{width:100%;max-width:none;margin:0;padding-left:clamp(24px,5vw,80px);padding-right:clamp(24px,5vw,80px)}
+    @media(max-width:640px){.nav{width:100%;padding-left:17px;padding-right:17px}}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="topline"><div class="ticker-track"><span>HINOKI — 自分のペースで楽しむ日本</span>✳<span>心に残る味</span>✳<span>自分らしさを大切にする人へ</span>✳<span>HINOKI — 自分のペースで楽しむ日本</span>✳<span>心に残る味</span>✳</div></div>
-  <header class="wrap nav">
+  <header class="nav">
     <a class="brand" href="#inicio" aria-label="HINOKI início"><span class="brand-mark"></span><span><span class="brand-name">HINOKI</span><span class="brand-sub">JAPANESE FOOD CULTURE</span></span></a>
     <nav class="navlinks" id="navlinks" aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#essencia">Nossa essência</a><a href="#contato">Contato</a></nav>
     <div class="nav-actions"><button type="button" class="cart-open" id="cartOpen" aria-haspopup="dialog" aria-expanded="false" aria-controls="cartOverlay">Sacola <span class="cart-count" id="cartCount" aria-live="polite" aria-atomic="true">0</span></button><a class="btn" href="#cardapio">Pedir agora ↗</a><button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navlinks">☰</button></div>
