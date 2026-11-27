@@ -287,6 +287,25 @@
       .experience-num{transition:none!important}
     }
 
+
+    /* Elemento decorativo da seção Nossa Essência */
+    .manifesto{isolation:isolate}
+    .manifesto:after{
+      content:"";
+      position:absolute;
+      z-index:0;
+      right:0;
+      bottom:0;
+      width:clamp(230px,30vw,430px);
+      height:clamp(230px,30vw,390px);
+      background:url("https://raw.githubusercontent.com/Alexsandrolima255300/HINOKI/513b7125fd5645913de9daefe4a80ea8ca3dc49a/56577-removebg-preview.png") no-repeat right bottom/contain;
+      opacity:.94;
+      pointer-events:none;
+    }
+    .manifesto .section{position:relative;z-index:1}
+    @media(max-width:640px){
+      .manifesto:after{width:210px;height:205px;opacity:.68}
+    }
   </style>
 </head>
 <body>
