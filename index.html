@@ -37,6 +37,110 @@
     @media(max-width:850px){.navlinks{gap:17px}.hero-grid{grid-template-columns:1fr;gap:12px;padding:28px 0;min-height:0}.hero-copy{min-height:330px;padding-right:40%}.hero-visual{right:calc(50% - 50vw);width:48%;height:auto}.hero h1{font-size:clamp(70px,10vw,112px);letter-spacing:.02em;line-height:.9}.menu-grid{grid-template-columns:repeat(2,1fr)}.manifesto-grid{gap:35px}.footer-links{gap:25px}}
     @media(max-width:640px){.wrap{width:min(100% - 34px,520px)}.topline{height:28px}.nav{height:66px}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#0b0b0b;padding:25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid #333}.navlinks.show{display:flex}.menu-toggle{display:block}.nav-actions .btn{display:none}.hero{min-height:0}.hero-grid{display:flex;flex-direction:column;align-items:stretch;padding:38px 0 0;gap:18px;min-height:0}.hero-copy{min-height:0;padding-right:0}.hero-tagline{font-size:11px;letter-spacing:.1em}.hero-desc{max-width:100%;font-size:13px;line-height:1.7;margin:10px 0 18px}.hero-buttons{gap:10px}.hero-visual{position:relative;right:auto;bottom:auto;width:100%;height:auto;aspect-ratio:16/9;order:2;margin-top:0;margin-bottom:0}.hero-photo{object-fit:contain}.hero h1{font-size:clamp(72px,20vw,118px);letter-spacing:.02em;line-height:.9}.hero-desc{font-size:13px;max-width:310px}.section{padding:75px 0}.section-head{display:block}.section-note{margin-top:20px}.menu-grid{grid-template-columns:1fr;gap:13px}.food-image{height:230px}.manifesto .section{padding:75px 0}.manifesto-grid{grid-template-columns:1fr;gap:30px}.manifesto-art{min-height:330px}.manifesto-copy .section-title{font-size:68px}.experience{padding:75px 0}.experience-grid{grid-template-columns:1fr}.experience-item{min-height:140px}.gallery{height:auto;grid-template-columns:1fr 1fr;grid-template-rows:190px 150px}.gallery div:first-child{grid-column:1/-1}.contact{padding:55px 0}.contact-inner{display:block}.contact .btn{margin-top:25px}.footer-top{display:block}.footer-links{margin-top:35px;justify-content:space-between;gap:12px}.footer-bottom{gap:15px;flex-direction:column}.section-title{font-size:68px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+    /* HINOKI visual craft pass — editorial Japanese food direction */
+    :root{--red:#ed101a;--black:#080808;--paper:#f5f2ec;--muted:#a7a39e;--line:rgba(255,255,255,.14);--display:"Barlow Condensed",Impact,sans-serif;--body:"DM Sans",Arial,sans-serif;--ease-out:cubic-bezier(.16,1,.3,1)}
+    .topline{height:30px;letter-spacing:.24em}
+    .nav{height:84px;border-bottom-color:rgba(255,255,255,.2)}
+    .brand-mark{border-radius:2px;transform:rotate(45deg);width:28px;height:28px}
+    .brand-mark:after{transform:rotate(-45deg);border-radius:0;width:35px;height:13px;bottom:-5px}
+    .brand-name{letter-spacing:.06em}
+    .navlinks a{position:relative;padding:10px 0;transition:color .18s ease}
+    .navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:var(--red);transition:right .22s ease}
+    .navlinks a:hover:after,.navlinks a:focus-visible:after{right:0}
+    .cart-open{transition:color .18s ease}.cart-open:hover{color:var(--red)}
+    .hero{isolation:isolate}
+    .hero:before{content:"";position:absolute;z-index:1;left:0;top:0;bottom:0;width:4px;background:var(--red)}
+    .hero-copy{padding-left:clamp(8px,2vw,24px)}
+    .hero-kicker{letter-spacing:.28em}
+    .hero h1{font-size:clamp(88px,10.5vw,148px);letter-spacing:-.015em;text-shadow:7px 7px 0 rgba(237,16,26,.12)}
+    .hero-tagline{font-size:13px;letter-spacing:.19em}
+    .hero-desc{max-width:410px;color:#d0cbc5}
+    .btn{min-height:48px;padding:15px 24px;transition:transform .2s var(--ease-out),background .2s ease,color .2s ease,border-color .2s ease}
+    .btn:hover{transform:translateY(-3px)}
+    .section{padding-top:124px;padding-bottom:124px}
+    .section-head{align-items:flex-end;margin-bottom:50px}
+    .section-head>div:first-child{position:relative}
+    .section-head .eyebrow{display:inline-flex;align-items:center;gap:10px}
+    .section-head .eyebrow:after{content:"";display:inline-block;width:42px;height:1px;background:var(--red)}
+    .section-title{letter-spacing:-.025em;line-height:.78;margin-top:18px}
+    .section-note{max-width:300px;border-left:1px solid var(--red);padding-left:18px;color:#b7b1aa}
+    .filters{gap:9px;margin-bottom:30px}
+    .filter{padding:11px 19px;border-color:#3a3333;color:#c5bfba;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
+    .filter:hover{transform:translateY(-2px)}
+    .menu-grid{gap:20px}
+    .food-card{position:relative;border:1px solid #292323;background:#101010;transition:transform .28s var(--ease-out),border-color .28s ease,box-shadow .28s ease}
+    .food-card:before{content:"";position:absolute;z-index:2;top:0;left:0;width:34px;height:2px;background:var(--red);transition:width .28s var(--ease-out)}
+    .food-card:hover{transform:translateY(-7px);border-color:#5a3434;box-shadow:0 18px 42px rgba(0,0,0,.28)}
+    .food-card:hover:before{width:100%}
+    .food-image{height:auto;aspect-ratio:1.42/1;background:#1b1515}
+    .food-image:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.28));pointer-events:none}
+    .food-image img{transition:transform .65s var(--ease-out),filter .35s ease}
+    .food-card:hover .food-image img{transform:scale(1.055);filter:saturate(1.04)}
+    .food-tag{top:15px;left:15px;padding:8px 11px;letter-spacing:.16em}
+    .food-info{padding:22px}
+    .food-name{font:800 29px/.95 var(--display);letter-spacing:.015em;text-transform:uppercase;margin:0}
+    .food-price{font-size:15px;letter-spacing:.02em}
+    .food-desc{font-size:12px;line-height:1.75;color:#aaa49e;min-height:42px;margin:13px 0 20px}
+    .add-btn{min-height:43px;border-color:#514747;letter-spacing:.16em;transition:background .18s ease,border-color .18s ease,letter-spacing .18s ease}
+    .add-btn:hover{letter-spacing:.2em}
+    .manifesto{background:#eeeae2}
+    .manifesto-art{min-height:500px;background:#171313}
+    .manifesto-art:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.2);pointer-events:none}
+    .manifesto-art img{opacity:.82;filter:saturate(.78);transition:transform .8s var(--ease-out)}
+    .manifesto-art:hover img{transform:scale(1.035)}
+    .manifesto-stamp{background:#eeeae2;font-size:22px;letter-spacing:.04em}
+    .manifesto-copy .section-title{line-height:.82}
+    .manifesto-copy p{font-size:14px;line-height:2;color:#49443f}
+    .experience{padding-top:120px;padding-bottom:120px}
+    .experience>.eyebrow{display:flex;align-items:center;gap:12px}
+    .experience>.eyebrow:after{content:"";height:1px;width:48px;background:var(--red)}
+    .experience-grid{margin-top:52px;background:#3b3030;border-color:#3b3030}
+    .experience-item{position:relative;padding:34px 32px 38px;min-height:210px;transition:background .25s ease}
+    .experience-item:after{content:"";position:absolute;left:32px;right:32px;bottom:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease-out)}
+    .experience-item:hover{background:#151111}
+    .experience-item:hover:after{transform:scaleX(1)}
+    .experience-num{font-size:58px;line-height:1}
+    .experience-item h3{font-size:27px;letter-spacing:.015em}
+    .experience-item p{font-size:12px;line-height:1.85;max-width:290px}
+    .gallery{height:390px;gap:12px}
+    .gallery div{background:#171313}
+    .gallery img{filter:grayscale(28%);transition:transform .7s var(--ease-out),filter .4s ease}
+    .gallery div:hover img{transform:scale(1.045);filter:grayscale(0)}
+    .gallery div:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.68));pointer-events:none}
+    .gallery-label{z-index:1;left:19px;bottom:18px;font-size:25px;letter-spacing:.035em}
+    .contact{position:relative;overflow:hidden;padding:88px 0}
+    .contact:before{content:"HINOKI";position:absolute;right:-2vw;bottom:-.28em;font:900 clamp(130px,24vw,360px)/.8 var(--display);color:rgba(8,8,8,.075);pointer-events:none;white-space:nowrap}
+    .contact-inner{position:relative;z-index:1}
+    .contact h2{letter-spacing:-.025em}
+    .contact .btn{min-height:54px}
+    footer{border-top:1px solid #292323}
+    .footer-top{padding-bottom:52px}
+    .footer-col a{transition:color .18s ease,transform .18s ease}
+    .footer-col a:hover{color:#fff;transform:translateX(3px)}
+    .footer-bottom{letter-spacing:.15em}
+    @media(max-width:850px){
+      .nav{height:76px}.hero-copy{padding-left:12px}.hero h1{font-size:clamp(78px,11vw,122px)}
+      .section{padding-top:94px;padding-bottom:94px}.manifesto-art{min-height:400px}
+      .experience-item{padding:28px 24px}.experience-item:after{left:24px;right:24px}
+      .gallery{height:320px}
+    }
+    @media(max-width:640px){
+      .nav{height:66px}.brand-mark{width:25px;height:25px}.hero:before{width:3px}
+      .hero-copy{padding-left:10px}.hero h1{font-size:clamp(76px,21vw,120px)}
+      .hero-tagline{font-size:10px;letter-spacing:.14em}
+      .section{padding-top:78px;padding-bottom:78px}.section-head{margin-bottom:32px}
+      .section-note{margin-top:22px;padding-left:14px}
+      .filters{gap:7px}.filter{padding:10px 13px;font-size:9px}
+      .menu-grid{gap:15px}.food-image{aspect-ratio:1.55/1}
+      .food-info{padding:19px}.food-name{font-size:27px}
+      .manifesto-art{min-height:340px}.experience{padding-top:78px;padding-bottom:78px}
+      .experience-grid{margin-top:34px}.experience-item{min-height:155px;padding:26px 24px}
+      .gallery{height:auto;grid-template-rows:190px 150px;gap:9px}
+      .contact{padding:62px 0}.contact:before{font-size:42vw;right:-8vw}
+    }
+    @media(hover:none){.food-card:hover,.filter:hover,.btn:hover{transform:none}}
+
   </style>
 </head>
 <body>
