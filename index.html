@@ -402,12 +402,16 @@
         const count = window.innerWidth < 640 ? 180 : 420;
         const positions = new Float32Array(count * 3);
         const seeds = new Float32Array(count);
+        const seeded = n => {
+          const value = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+          return value - Math.floor(value);
+        };
         for (let i = 0; i < count; i++) {
           const i3 = i * 3;
-          positions[i3] = 0.05 + Math.random() * 4.8;
-          positions[i3 + 1] = (Math.random() - 0.5) * 3.7;
-          positions[i3 + 2] = (Math.random() - 0.5) * 3.2 - 0.8;
-          seeds[i] = Math.random();
+          positions[i3] = 0.05 + seeded(i * 3 + 1) * 4.8;
+          positions[i3 + 1] = (seeded(i * 3 + 2) - 0.5) * 3.7;
+          positions[i3 + 2] = (seeded(i * 3 + 3) - 0.5) * 3.2 - 0.8;
+          seeds[i] = seeded(i + 900);
         }
         const particleGeometry = new THREE.BufferGeometry();
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -467,17 +471,17 @@
           renderer.render(scene, camera);
           if (!reduceMotion) frame = requestAnimationFrame(render);
         };
-        if (!reduceMotion) {
-          hero.addEventListener('pointermove', event => {
-            const rect = hero.getBoundingClientRect();
-            pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-            pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-          }, { passive: true });
-        }
+        const handlePointerMove = event => {
+          const rect = hero.getBoundingClientRect();
+          pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+          pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+        };
+        if (!reduceMotion) hero.addEventListener('pointermove', handlePointerMove, { passive: true });
         render();
         window.addEventListener('pagehide', () => {
           cancelAnimationFrame(frame);
           observer?.disconnect();
+          hero.removeEventListener('pointermove', handlePointerMove);
           resources.forEach(resource => resource.dispose?.());
           renderer?.dispose();
         }, { once: true });
