@@ -64,7 +64,9 @@
     .section-head .eyebrow{display:inline-flex;align-items:center;gap:10px}
     .section-head .eyebrow:after{content:"";display:inline-block;width:42px;height:1px;background:var(--red)}
     .section-title{letter-spacing:-.025em;line-height:.78;margin-top:18px}
-    .section-note{max-width:300px;border-left:1px solid var(--red);padding-left:18px;color:#b7b1aa}
+    .section-note{position:relative;isolation:isolate;display:flex;align-items:center;max-width:390px;min-height:150px;margin:0;padding:24px 26px 24px 30px;border-left:1px solid var(--red);color:#d0cbc4;font-size:13px;line-height:1.85;overflow:visible}
+    .section-note:before{content:"";position:absolute;z-index:-1;inset:-24px -34px -24px -12px;background:url("https://raw.githubusercontent.com/Alexsandrolima255300/HINOKI/b35c4d3956d1e15033a124d22761bd07d168cbb6/56574-removebg-preview.png") no-repeat right center / contain;opacity:.78;pointer-events:none}
+    .section-note:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.88) 48%,rgba(8,8,8,.15) 100%);pointer-events:none}
     .filters{gap:9px;margin-bottom:30px}
     .filter{padding:11px 19px;border-color:#3a3333;color:#c5bfba;transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
     .filter:hover{transform:translateY(-2px)}
@@ -130,7 +132,7 @@
       .hero-copy{padding-left:10px}.hero h1{font-size:clamp(76px,21vw,120px)}
       .hero-tagline{font-size:10px;letter-spacing:.14em}
       .section{padding-top:78px;padding-bottom:78px}.section-head{margin-bottom:32px}
-      .section-note{margin-top:22px;padding-left:14px}
+      .section-note{margin-top:22px;padding:22px 16px 22px 18px;min-height:130px;max-width:100%}.section-note:before{inset:-18px -12px;background-position:right center;opacity:.72}
       .filters{gap:7px}.filter{padding:10px 13px;font-size:9px}
       .menu-grid{gap:15px}.food-image{aspect-ratio:1.55/1}
       .food-info{padding:19px}.food-name{font-size:27px}
