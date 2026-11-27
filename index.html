@@ -278,6 +278,7 @@
     .experience-item:hover .experience-num{transform:translateX(8px);color:#fff}
     .gallery div{cursor:zoom-in}
     @media(max-width:640px){#hinoki-world{opacity:.38}.hero-copy,.hero-visual{will-change:auto}}
+    body.gsap-ready .hero-kicker,body.gsap-ready .hero h1,body.gsap-ready .hero-tagline,body.gsap-ready .hero-desc,body.gsap-ready .hero-buttons{animation:none;opacity:1}
     @media(prefers-reduced-motion:reduce){
       #hinoki-world{display:none}
       .reveal-up{opacity:1!important;transform:none!important}
@@ -432,7 +433,7 @@
             varying float vAlpha;
             void main(){
               float d = length(gl_PointCoord - vec2(0.5));
-              float glow = smoothstep(0.5, 0.04, d);
+              float glow = 1.0 - smoothstep(0.04, 0.5, d);
               if(glow < 0.02) discard;
               vec3 color = mix(vec3(0.48,0.08,0.10), vec3(1.0,0.72,0.62), glow);
               gl_FragColor = vec4(color, glow * vAlpha);
@@ -487,9 +488,9 @@
     })();
   </script>
   <script>
-    (() => {
+    window.addEventListener('DOMContentLoaded', () => {
       const gsap = window.gsap;
-      if (!gsap) return;
+      if (!gsap || !window.ScrollTrigger) return;
       gsap.registerPlugin(window.ScrollTrigger);
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.body.classList.add('gsap-ready');
@@ -533,7 +534,7 @@
         card.addEventListener('pointerleave', () => gsap.to(image, { x: 0, y: 0, duration: 0.5, ease: 'power3.out' }));
       });
       window.addEventListener('load', () => window.ScrollTrigger?.refresh(), { once: true });
-    })();
+    }, { once: true });
   </script>
 
 </body>
