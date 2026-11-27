@@ -245,16 +245,16 @@
       .hero-photo,.food-card,.btn,.filter,.add-btn,.navlinks a{transition:none!important}
     }
 
-    .privacy-notice{position:fixed;z-index:90;left:22px;right:22px;bottom:22px;max-width:760px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px 22px;background:#f5f2ec;color:#111;border-top:3px solid var(--red);box-shadow:0 18px 55px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+    .privacy-notice{position:fixed;z-index:90;left:0;right:0;bottom:0;width:100%;max-width:none;margin:0;display:flex;align-items:center;justify-content:space-between;gap:clamp(22px,4vw,64px);padding:22px clamp(22px,5vw,80px) calc(22px + env(safe-area-inset-bottom));background:#f5f2ec;color:#111;border-top:3px solid var(--red);border-radius:0;box-shadow:0 -12px 45px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
     .privacy-notice.show{opacity:1;visibility:visible;transform:translateY(0)}
-    .privacy-notice p{font-size:12px;line-height:1.6;margin:0;max-width:510px;color:#49443f}
+    .privacy-notice p{font-size:13px;line-height:1.65;margin:0;max-width:900px;flex:1;color:#49443f}
     .privacy-notice strong{display:block;font:800 21px var(--display);text-transform:uppercase;margin-bottom:3px}
     .privacy-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
     .privacy-actions a{font-size:10px;color:#222;text-decoration:underline;text-underline-offset:3px}
     .privacy-dismiss{background:var(--red);color:#fff;border:0;padding:12px 17px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     .privacy-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
     .privacy-links a,.privacy-links button{font:inherit;font-size:10px;color:#aaa;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-    @media(max-width:640px){.privacy-notice{left:12px;right:12px;bottom:12px;display:block;padding:17px}.privacy-actions{margin-top:14px;justify-content:space-between}.privacy-notice p{font-size:11px}.privacy-dismiss{padding:11px 14px}}
+    @media(max-width:640px){.privacy-notice{left:0;right:0;bottom:0;width:100%;display:block;padding:18px 18px calc(18px + env(safe-area-inset-bottom))}.privacy-actions{margin-top:14px;justify-content:space-between}.privacy-notice p{font-size:11px}.privacy-dismiss{padding:11px 14px}}
 
   </style>
 </head>
